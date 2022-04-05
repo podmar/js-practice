@@ -89,7 +89,7 @@ function printItemAtIndex (array, index) {
 
 // ARRAYS EX. 6
 function repeatValues (array) {
-    values = [];
+    let values = [];
 
     for (num = 0; num < array.length; num++) {
         if (array.includes(array[num], num+1) == true) {
@@ -99,24 +99,80 @@ function repeatValues (array) {
     return values; 
 };
 
-console.log(repeatValues(quokkaAge)); 
+// console.log(repeatValues(quokkaAge)); 
 
 // ARRAYS EX. 7
-myColor = ["Red", "Green", "White", "Black"];
+let myColor = ["Red", "Green", "White", "Black"];
 
 function concatenateArray(array) {
-    stringValue = ""
+    let stringValue = ""
 
     for (n = 0; n<array.length; n++) {
-        stringValue = stringValue + array[n];
+        let stringValue = stringValue + array[n];
     };
     return stringValue;
 };
 
-console.log(concatenateArray(myColor));
+// console.log(concatenateArray(myColor));
 
 function turnToString (array) {
     return String(array);
 }; 
 
-console.log(turnToString(myColor));
+// console.log(turnToString(myColor));
+
+// STRINGS EX. 1
+//-> SOL1
+function reverseNumberS1 (number) {
+    let reversedNumber = String(number).split("").reverse().join("");
+    return reversedNumber;
+};
+
+// console.log(reverseNumberS1(123456)); 
+
+//-> SOL2
+// function reverseNumberS2 (number) {
+//     let reversedNumber = Number();
+//     // let remainder = number
+//     // let loopCounter = 1
+
+//     // while (remainder > 10) {
+//     //     let digit = remainder%(10*loopCounter);
+//     //     remainder /= 10
+//     //     reversedNumber = digit*Math.floor(remainder); 
+//     //     loopCounter++;
+//     //     console.log(digit, loopCounter, remainder);
+//     // };
+//     // return reversedNumber;
+
+//     for (i = 1; i < 5; i++) {
+//         let digit = number%(10**i);
+//         reversedNumber = reversedNumber * 10 + digit;
+//         number -= digit * 10**i;
+//     }
+
+// };
+
+// console.log(reverseNumberS2(123456));
+
+//-> SOL3
+function reverseNumberS3 (number) {
+    let numberString = new String(number);
+    console.log(numberString);
+    let reversedNumber = "";
+
+    for (n = numberString.length-1; n==0; n--) {
+        console.log(n, numberString[n]);
+
+        reversedNumber += numberString[n];
+        console.log(numberString[n]);
+    };
+
+    return reversedNumber;
+};
+
+reverseNumberS3(9876); 
+
+console.log(reverseNumberS3(123456)); 
+
+// STRINGS EX. 2
