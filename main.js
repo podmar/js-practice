@@ -177,7 +177,7 @@ function reverseNumberS1 (number) {
 
 // STRINGS EX. 2
 function order (someString) {
-    let array = someString.split("").sort()
+    let array = someString.split("").sort();
     let alString = "";
 
     for (n = 0; n<array.length; n++) {
@@ -216,4 +216,174 @@ function findLongestWord (someString) {
     return longestWord;
 };
 
-console.log(findLongestWord("This is a string that has some long words in it: capitalising, slicing, concatenating."));
+// console.log(findLongestWord("This is a string that has some long words in it: capitalising, slicing, concatenating."));
+
+// EXTRA FUNCTION EX. 1
+function noReturnFunction () {
+    console.log("The multiplication of 2 and 4 equals ", 2*4);
+    return;
+};
+
+// noReturnFunction();
+
+// EXTRA FUNCTION EX. 2
+function anotherNoParamFuntion () {
+    let result = 2*4;
+    console.log("The multiplication of 2 and 4 is ", result, ", and this is what this funtion will return.")
+    return result;
+};
+
+// let resultOfAnotherNoParamFunction =  anotherNoParamFuntion()
+// console.log("return value of the above funtion is: ", resultOfAnotherNoParamFunction);
+
+// EXTRA FUNCTION EX. 3
+function twoParamFuntion (a, b) {
+    let multiplication = a*b;
+    console.log("This function is multiplying the two numbers:\n" + a +", " + b + "\nprinting the result:\n", multiplication, "\nand returning the result." );
+    return multiplication;
+};
+
+//Testing with 3 examples
+let testArray = [[0,5], [143,5], [9,654]];
+
+// for (n=0; n<testArray.length; n++) {
+//     twoParamFuntion(testArray[n][0], testArray[n][1]);
+// };
+
+// EXTRA FUNCTION EX. 4
+//Write a function that determines the type of a triangle given the length of its three sides.
+//equilateral, right isosceles, obtuse isosceles, acute isosceles, right scalene, obtuse scalene, and acute scalene
+
+// EXTRA FUNCTION EX. 5
+// generating test arrays
+let testCharArray = ["Banana", "Kiwi", "Aubergine", "Pineapple"];
+
+//solution to the task
+function aTo1Replacement (someArray) {
+
+    for (n=0; n<someArray.length; n++) {
+        if (someArray[n].toUpperCase() == "A") {
+            someArray[n] = "1";
+        };
+    };
+    return someArray;
+};
+
+function aTo1ReplacementSol1 (someArray) {
+    let solutionArray = [];
+
+    for (n=0; n<someArray.length; n++) {
+        if (someArray[n].toUpperCase() == "A") {
+            solutionArray.push("1");
+        } else {
+            solutionArray.push(someArray[n]);
+        };
+    };
+    return solutionArray;
+};
+
+// console.log(aTo1Replacement(["a"])); 
+
+//testing - the test array in 1st solution is not iterating, only sisplaying the fisrt array. 
+// for (n=0; n<testCharArray.length; n++) {
+//     console.log(n, aTo1Replacement(testCharArray[n].split("")));
+// };
+
+//Testing Sol1 -> why is this loop not iterating? 
+// for (n=0; n<testCharArray.length; n++) {
+//     console.log(n, aTo1ReplacementSol1(testCharArray[n].split("")));
+// };
+
+//another solution with a funtion that takes strings, not arrays
+// function aTo1ReplacementSol2 (someString) {
+//     return someString.replace("a", "1");
+// };
+
+//testing the 2nd solution -> works well, does not replace capital "A"
+// for (n=0; n<testCharArray.length; n++) {
+//     console.log(aTo1ReplacementSol2(testCharArray[n]));
+// };
+
+// EXTRA FUNCTION EX. 6
+//Write two functions. The first one should return the sum of all the elements of an array and the second one should return the smallest number in the array. Print the result in the main program.
+
+let testNumArray = [1,4,6,8,-2,7];
+
+function arrayElementSum (someArray) {
+    let solution = someArray.reduce((valueA, valueB) => valueA+valueB, 0);
+    return solution;
+};
+
+//testing
+// console.log(arrayElementSum(testNumArray));
+
+function smallestElement (someArray) {
+    let smallest = someArray[0];
+
+    for (n=1; n<someArray.length; n++) {
+        if (someArray[n] < smallest) {
+            smallest = someArray[n];
+        };
+    };
+    return smallest;
+};
+
+//testing
+// console.log(smallestElement(testNumArray));
+
+// EXTRA FUNCTION EX. 7
+//Write a function that adds the even numbers of an array. For example, the array: 1 2 8 3 2 would result in the sum of 2 + 8 + 2, since they are even numbers. Return the result and print it in the main program.
+
+function evenElementsArraySum (someArray) {
+    let evenSum = someArray.reduce((valueA, valueB) => valueB%2==0 ? valueA+valueB: valueA, 0);
+    console.log(evenSum);
+    return evenSum;
+};
+
+//testing
+// evenElementsArraySum(testNumArray);
+
+// EXTRA FUNCTION EX. 7
+//Write a function that adds the even positions of an array. For example, the array: 1 2 8 3 2 3 4 would result in the sum of 8 + 2 + 4 since they are in even positions in the array (position 2,4,6). Return the result and print it in the main program.
+
+function evenIndexArraySum (someArray) {
+    let sum = 0;
+
+    for (n=0; n<someArray.length; n+=2) {
+        sum += someArray[n];
+    };
+    return sum; 
+};
+
+//testing
+// let solution = evenIndexArraySum(testNumArray);
+// console.log(solution);
+
+// EXTRA FUNCTION EX. 8
+//Write a function that by sending a number as parameter, tells you all the even numbers before it. For example, if you send to the function the number 9, it should print 2,4,6,8.
+
+function listOfEvenNum (someNumber) {
+    let evenArray = [];
+    let startingValue = someNumber; 
+
+
+    if (someNumber%2==0) {
+        startingValue -= 2;
+    } else if (someNumber%2==1) {
+        startingValue -= 1;
+    } else {
+        console.log("Please enter an integer.");
+        return;
+    }
+    
+    for (n=startingValue; n>0; n-=2) {
+            evenArray.push(n);
+        }; 
+    return evenArray;
+};
+
+//testing
+let solution = listOfEvenNum(6.4);
+console.log(solution);
+
+// EXTRA FUNCTION EX. 9
