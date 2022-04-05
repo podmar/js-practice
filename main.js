@@ -192,15 +192,28 @@ function order (someString) {
 // STRINGS EX. 3
 function firstUpper (someString) {
     let array = someString.split(" ");
-    console.log(array);
     let capitalisedString = "";
 
     for (n = 0; n < array.length; n++) {
         array[n] = array[n][0].toUpperCase() + array[n].slice(1);
         capitalisedString = capitalisedString + array[n] + " "
     };
-
     return capitalisedString;
 };
 
-console.log(firstUpper("This is a function that capitalises the first letter of every word."));
+// console.log(firstUpper("This is a function that capitalises the first letter of every word."));
+
+// STRINGS EX. 4
+function findLongestWord (someString) {
+    let array = someString.split(" ");
+    let longestWord = "";
+
+    for (n = 0; n < array.length; n++) {
+        if (longestWord.length < array[n].length) {
+            longestWord = array[n];
+        };
+    };
+    return longestWord;
+};
+
+console.log(findLongestWord("This is a string that has some long words in it: capitalising, slicing, concatenating."));
