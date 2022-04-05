@@ -108,7 +108,7 @@ function concatenateArray(array) {
     let stringValue = ""
 
     for (n = 0; n<array.length; n++) {
-        let stringValue = stringValue + array[n];
+        stringValue = stringValue + array[n];
     };
     return stringValue;
 };
@@ -156,23 +156,51 @@ function reverseNumberS1 (number) {
 // console.log(reverseNumberS2(123456));
 
 //-> SOL3
-function reverseNumberS3 (number) {
-    let numberString = new String(number);
-    console.log(numberString);
-    let reversedNumber = "";
+// function reverseNumberS3 (someNumber) {
+//     let numberString = new String(someNumber);
+//     console.log(numberString);
+//     let reversedNumber = "";
 
-    for (n = numberString.length-1; n==0; n--) {
-        console.log(n, numberString[n]);
+//     for (n = numberString.length-1; n==0; n--) {
+//         console.log(n, numberString[n]);
 
-        reversedNumber += numberString[n];
-        console.log(numberString[n]);
-    };
+//         reversedNumber += numberString[n];
+//         console.log(numberString[n]);
+//     };
 
-    return reversedNumber;
-};
+//     return reversedNumber;
+// };
 
-reverseNumberS3(9876); 
+// reverseNumberS3(9876); 
 
-console.log(reverseNumberS3(123456)); 
+// console.log(reverseNumberS3(123456)); 
 
 // STRINGS EX. 2
+function order (someString) {
+    let array = someString.split("").sort()
+    let alString = "";
+
+    for (n = 0; n<array.length; n++) {
+        alString = alString + array[n];
+    };
+
+    return alString;
+};
+
+// console.log(order("bla"));
+
+// STRINGS EX. 3
+function firstUpper (someString) {
+    let array = someString.split(" ");
+    console.log(array);
+    let capitalisedString = "";
+
+    for (n = 0; n < array.length; n++) {
+        array[n] = array[n][0].toUpperCase() + array[n].slice(1);
+        capitalisedString = capitalisedString + array[n] + " "
+    };
+
+    return capitalisedString;
+};
+
+console.log(firstUpper("This is a function that capitalises the first letter of every word."));
