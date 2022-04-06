@@ -343,7 +343,7 @@ function evenElementsArraySum (someArray) {
 //testing
 // evenElementsArraySum(testNumArray);
 
-// EXTRA FUNCTION EX. 7
+// EXTRA FUNCTION EX. 8
 //Write a function that adds the even positions of an array. For example, the array: 1 2 8 3 2 3 4 would result in the sum of 8 + 2 + 4 since they are in even positions in the array (position 2,4,6). Return the result and print it in the main program.
 
 function evenIndexArraySum (someArray) {
@@ -359,7 +359,7 @@ function evenIndexArraySum (someArray) {
 // let solution = evenIndexArraySum(testNumArray);
 // console.log(solution);
 
-// EXTRA FUNCTION EX. 8
+// EXTRA FUNCTION EX. 9
 //Write a function that by sending a number as parameter, tells you all the even numbers before it. For example, if you send to the function the number 9, it should print 2,4,6,8.
 
 function listOfEvenNum (someNumber) {
@@ -383,7 +383,34 @@ function listOfEvenNum (someNumber) {
 };
 
 //testing
-let solution = listOfEvenNum(6.4);
-console.log(solution);
+// let solution = listOfEvenNum(6.4);
+// console.log(solution);
 
-// EXTRA FUNCTION EX. 9
+// EXTRA FUNCTION EX. 10
+//Write a function that by sending two numbers as parameters, it tells you the odd numbers between these. For instance, if you send the numbers 1 and 13 as parameters, it should print 1,3,5,7,9,11,13.
+
+function oddBetween (a, b) {
+    let oddNum = [];
+    let startingValue = Math.abs(a)<Math.abs(b) ? a : b;
+
+    if (a==b) {
+        console.log("Please enter two different numbers.")
+        return oddNum;
+    } else if (startingValue%2==0) {
+        startingValue += 1;
+    } else if (startingValue%2==1) {
+        startingValue += 2;
+    } else {
+        console.log("Please enter an integer.");
+        return oddNum;
+    };  
+
+    for (n=startingValue; n< (Math.abs(a)>Math.abs(b) ? a : b); n+=2) {
+        oddNum.push(n);
+    };
+    return oddNum;
+};
+
+//testing - not working with negative numbers
+// let result = oddBetween(3,10);
+// console.log(result);
