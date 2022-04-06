@@ -26,6 +26,7 @@
 //     console.log("You and Julia are the same age.");
 // };
 
+//_________________________ARRAYS_________________________
 // ARRAYS EX. 1
 let quokkas = ["Marta", "Jess", "Angelina", "Karolina", "Arno", "Alex", "John", "Ottavia", "Raul"];
 // quokkas.sort();
@@ -121,6 +122,7 @@ function turnToString (array) {
 
 // console.log(turnToString(myColor));
 
+//_________________________STRINGS_________________________
 // STRINGS EX. 1
 //-> SOL1
 function reverseNumberS1 (number) {
@@ -130,32 +132,32 @@ function reverseNumberS1 (number) {
 
 // console.log(reverseNumberS1(123456)); 
 
-//-> SOL2
-// function reverseNumberS2 (number) {
-//     let reversedNumber = Number();
-//     // let remainder = number
-//     // let loopCounter = 1
+//-> SOL2 NOT FUNCTIONAL
+function reverseNumberS2 (number) {
+    let reversedNumber = Number();
+    // let remainder = number
+    // let loopCounter = 1
 
-//     // while (remainder > 10) {
-//     //     let digit = remainder%(10*loopCounter);
-//     //     remainder /= 10
-//     //     reversedNumber = digit*Math.floor(remainder); 
-//     //     loopCounter++;
-//     //     console.log(digit, loopCounter, remainder);
-//     // };
-//     // return reversedNumber;
+    // while (remainder > 10) {
+    //     let digit = remainder%(10*loopCounter);
+    //     remainder /= 10
+    //     reversedNumber = digit*Math.floor(remainder); 
+    //     loopCounter++;
+    //     console.log(digit, loopCounter, remainder);
+    // };
+    // return reversedNumber;
 
-//     for (i = 1; i < 5; i++) {
-//         let digit = number%(10**i);
-//         reversedNumber = reversedNumber * 10 + digit;
-//         number -= digit * 10**i;
-//     }
+    for (i = 1; i < 5; i++) {
+        let digit = number%(10**i);
+        reversedNumber = reversedNumber * 10 + digit;
+        number -= digit * 10**i;
+    }
 
-// };
+};
 
 // console.log(reverseNumberS2(123456));
 
-//-> SOL3
+//-> SOL3 NOT FUNCTIONAL
 // function reverseNumberS3 (someNumber) {
 //     let numberString = new String(someNumber);
 //     console.log(numberString);
@@ -218,6 +220,7 @@ function findLongestWord (someString) {
 
 // console.log(findLongestWord("This is a string that has some long words in it: capitalising, slicing, concatenating."));
 
+//_________________________EXTRA FUNCTION EXERCISES_________________________
 // EXTRA FUNCTION EX. 1
 function noReturnFunction () {
     console.log("The multiplication of 2 and 4 equals ", 2*4);
@@ -289,15 +292,15 @@ function triangleTypeBySideLenght (a, b, c) {
 //testing
 let testTriangles = [[2,3,4], [5,5,4], [4,5,5], [5,4,5], [3,3,3], [2,2,4]];
 
-for (n=0; n<testTriangles.length; n++) {
-    triangleTypeBySideLenght(...testTriangles[n]);
-};
+// for (n=0; n<testTriangles.length; n++) {
+//     triangleTypeBySideLenght(...testTriangles[n]);
+// };
 
 // EXTRA FUNCTION EX. 5
 // generating test arrays
 let testCharArray = ["Banana", "Kiwi", "Aubergine", "Pineapple"];
 
-//solution to the task
+//solutions to the task - first 2 buggy, last one works apart from A as a corner case. 
 function aTo1Replacement (someArray) {
 
     for (n=0; n<someArray.length; n++) {
@@ -321,9 +324,12 @@ function aTo1ReplacementSol1 (someArray) {
     return solutionArray;
 };
 
-// console.log(aTo1Replacement(["a"])); 
+//another solution with a funtion that takes strings, not arrays
+function aTo1ReplacementSol2 (someString) {
+    return someString.replace("a", "1");
+};
 
-//testing - the test array in 1st solution is not iterating, only sisplaying the fisrt array. 
+//testing - the test array in aTo1Replacement solution is not iterating, only sisplaying the fisrt array. 
 // for (n=0; n<testCharArray.length; n++) {
 //     console.log(n, aTo1Replacement(testCharArray[n].split("")));
 // };
@@ -331,11 +337,6 @@ function aTo1ReplacementSol1 (someArray) {
 //Testing Sol1 -> why is this loop not iterating? 
 // for (n=0; n<testCharArray.length; n++) {
 //     console.log(n, aTo1ReplacementSol1(testCharArray[n].split("")));
-// };
-
-//another solution with a funtion that takes strings, not arrays
-// function aTo1ReplacementSol2 (someString) {
-//     return someString.replace("a", "1");
 // };
 
 //testing the 2nd solution -> works well, does not replace capital "A"
@@ -425,7 +426,7 @@ function listOfEvenNum (someNumber) {
 // let solution = listOfEvenNum(6.4);
 // console.log(solution);
 
-// EXTRA FUNCTION EX. 10
+// EXTRA FUNCTION EX. 10 -> not working with negative numbers
 //Write a function that by sending two numbers as parameters, it tells you the odd numbers between these. For instance, if you send the numbers 1 and 13 as parameters, it should print 1,3,5,7,9,11,13.
 
 function oddBetween (a, b) {
