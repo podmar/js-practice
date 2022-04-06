@@ -1,3 +1,11 @@
+//_________________________TABLE OF CONTENTS_________________________
+//      Variables (Ex 1-5)
+//      Arrays (Ex. 1-7)
+//      Strings (Ex. 1-4)
+//      Extra Function Exercises (Ex. 1-10)
+//      DOM (Ex. 1-2)
+
+//_________________________VARIABLES_________________________
 // VARIABLES EX. 1
 // console.log("starting JS", "\nand it is working")
 
@@ -454,3 +462,6 @@ function oddBetween (a, b) {
 //testing - not working with negative numbers
 // let result = oddBetween(3,10);
 // console.log(result);
+
+//_________________________DOM_________________________
+// DOM EX. 1
