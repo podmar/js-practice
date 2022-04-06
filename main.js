@@ -252,7 +252,46 @@ let testArray = [[0,5], [143,5], [9,654]];
 
 // EXTRA FUNCTION EX. 4
 //Write a function that determines the type of a triangle given the length of its three sides.
-//equilateral, right isosceles, obtuse isosceles, acute isosceles, right scalene, obtuse scalene, and acute scalene
+//equilateral, isosceles, scalene
+
+function triangleTypeBySideLenght (a, b, c) {
+    let triangleSides = [a, b, c].sort(); 
+    let triangleType = "";
+
+    if (triangleSides[0]+triangleSides[1] <= triangleSides[2]) {
+        console.log("The given dimentions do not form a triangle.");
+        return triangleType = "not a triangle";
+    } else if (triangleSides[0]+triangleSides[1] > triangleSides[2]) {
+        triangleType = triangleTypeFinder(triangleSides);
+    } else {
+        console.log("Wrong input.");
+        return triangleType; 
+    };
+
+    function triangleTypeFinder (triangleArray) {
+        let tType = "";
+
+        if (triangleArray[0] == triangleArray[1] && triangleArray[1] == triangleArray[2]) {
+            tType = "Equilateral";
+            return tType;
+        } else if (triangleArray[0] == triangleArray[1] || triangleArray[0] == triangleArray[2] || triangleArray[1] == triangleArray[2]) {
+            tType = "Isoceles"; 
+        } else {
+            tType = "Scalene"
+        };
+        return tType;
+    };
+
+    console.log(`The sides ${[a, b, c]} form ${triangleType=="Scalene" ? "a" : "an"} ${triangleType} triangle.`);
+    return triangleType;
+};
+
+//testing
+let testTriangles = [[2,3,4], [5,5,4], [4,5,5], [5,4,5], [3,3,3], [2,2,4]];
+
+for (n=0; n<testTriangles.length; n++) {
+    triangleTypeBySideLenght(...testTriangles[n]);
+};
 
 // EXTRA FUNCTION EX. 5
 // generating test arrays
