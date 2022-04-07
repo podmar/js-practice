@@ -465,3 +465,18 @@ function oddBetween (a, b) {
 
 //_________________________DOM_________________________
 // DOM EX. 1
+// Write a function that uses the JavaScript DOM to create list of items and add them to an unordered list in your html document.
+
+function addClimbers (climbersArray) {
+    climbersArray.sort();
+    let climbersList = document.getElementById("climbers-list");
+
+    for (n=0; n<climbersArray.length; n++) {
+        let climber = document.createElement("li");
+        climber.innerHTML = climbersArray[n];
+        climbersList.appendChild(climber);
+    };
+};
+
+let climberCelebrities = ["Tommy Caldwell", "Alex Honnold", "Ashima Shiraishi", "Shauna Coxey", "Stefano Ghisolfi", "Adam Ondra", "Alex Megos", "Magnus Midtbo", "Janja Ganbret", "Chris Sharma", "Daniel Woods", "Lynn Hill"]; 
+addClimbers(climberCelebrities);
