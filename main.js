@@ -480,3 +480,36 @@ function addClimbers (climbersArray) {
 
 let climberCelebrities = ["Tommy Caldwell", "Alex Honnold", "Ashima Shiraishi", "Shauna Coxey", "Stefano Ghisolfi", "Adam Ondra", "Alex Megos", "Magnus Midtbo", "Janja Ganbret", "Chris Sharma", "Daniel Woods", "Lynn Hill"]; 
 addClimbers(climberCelebrities);
+
+// DOM EX. 2 
+// Write a function that will use the JavaScript DOM to insert an HTML table after the heading.
+
+function addTable(rows, cols) {
+    // let page = document;
+    let location = document.querySelector("body");
+
+    let table = document.createElement("table");
+    table.style.width = "100%";
+    table.style.height = "240px";
+    table.style.borderSpacing = "0";
+    table.style.borderTop = "1px solid black"
+    table.style.borderLeft = "1px solid black"
+
+    for (let i = 0; i < rows; i++) {
+        let row = document.createElement("tr");
+        
+        for (let n = 0; n < cols; n++) {
+            let col = document.createElement("td");
+            col.style.border = "1px solid black"
+            col.style.borderTopWidth = "0";
+            col.style.borderLeftWidth = "0";
+            // col.style.
+            row.appendChild(col);
+        };
+        table.appendChild(row);
+        // console.log(table);
+    };
+    location.appendChild(table);
+};
+
+addTable(5,3);
