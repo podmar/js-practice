@@ -170,25 +170,28 @@ function reverseNumberS2 (number) {
 
 // console.log(reverseNumberS2(123456));
 
-//-> SOL3 NOT FUNCTIONAL
-// function reverseNumberS3 (someNumber) {
-//     let numberString = new String(someNumber);
-//     console.log(numberString);
-//     let reversedNumber = "";
+//-> SOL3
+function reverseNumberS3 (someNumber) {
+    let numberString = new String(someNumber);
+    // console.log(numberString);
+    let reversedNumber = "";
 
-//     for (n = numberString.length-1; n==0; n--) {
-//         console.log(n, numberString[n]);
+    for (n = numberString.length-1; n>=0; n--) {
+        // console.log(n, numberString[n]);
 
-//         reversedNumber += numberString[n];
-//         console.log(numberString[n]);
-//     };
+        reversedNumber += numberString[n];
+        // console.log(numberString[n]);
+    };
 
-//     return reversedNumber;
-// };
+    return reversedNumber;
+};
 
-// reverseNumberS3(9876); 
+//testing
+testNumToReverse = [9876, 123456]
 
-// console.log(reverseNumberS3(123456)); 
+for (let n = 0; n < testNumToReverse.length; n++) {
+    console.log(reverseNumberS3(testNumToReverse[n]));   
+};
 
 // STRINGS EX. 2
 function order (someString) {
@@ -485,8 +488,8 @@ function addClimbers (climbersArray) {
     };
 };
 
-let climberCelebrities = ["Tommy Caldwell", "Alex Honnold", "Ashima Shiraishi", "Shauna Coxey", "Stefano Ghisolfi", "Adam Ondra", "Alex Megos", "Magnus Midtbo", "Janja Ganbret", "Chris Sharma", "Daniel Woods", "Lynn Hill"]; 
-addClimbers(climberCelebrities);
+// let climberCelebrities = ["Tommy Caldwell", "Alex Honnold", "Ashima Shiraishi", "Shauna Coxey", "Stefano Ghisolfi", "Adam Ondra", "Alex Megos", "Magnus Midtbo", "Janja Ganbret", "Chris Sharma", "Daniel Woods", "Lynn Hill"]; 
+// addClimbers(climberCelebrities);
 
 // DOM EX. 2 
 // Write a function that will use the JavaScript DOM to insert an HTML table after the heading.
@@ -519,5 +522,5 @@ function addTable(rows, cols) {
     location.appendChild(table);
 };
 
-addTable(5,3);
+// addTable(5,3);
 //#endregion
