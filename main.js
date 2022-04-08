@@ -143,11 +143,17 @@ function reverseNumberS1 (number) {
     return reversedNumber;
 };
 
-// console.log(reverseNumberS1(123456)); 
+// testing solution 1
+let testNumToReverse = [9876, 123456];
 
-//-> SOL2 NOT FUNCTIONAL
-function reverseNumberS2 (number) {
-    let reversedNumber = Number();
+// for (let n = 0; n < testNumToReverse.length; n++) {
+//     console.log(reverseNumberS1(testNumToReverse[n]));   
+// };
+
+// -> SOL2 with modulo, NOT FUNCTIONAL
+//#region
+// function reverseNumberS2 (number) {
+//     let reversedNumber = Number();
     // let remainder = number
     // let loopCounter = 1
 
@@ -160,38 +166,35 @@ function reverseNumberS2 (number) {
     // };
     // return reversedNumber;
 
-    for (i = 1; i < 5; i++) {
-        let digit = number%(10**i);
-        reversedNumber = reversedNumber * 10 + digit;
-        number -= digit * 10**i;
-    }
+//     for (i = 1; i < 5; i++) {
+//         let digit = number%(10**i);
+//         reversedNumber = reversedNumber * 10 + digit;
+//         number -= digit * 10**i;
+//     }
 
-};
+// };
 
-// console.log(reverseNumberS2(123456));
-
+// testing sol2 -> NOT FUNCTIONAL
+// for (let n = 0; n < testNumToReverse.length; n++) {
+//     console.log(reverseNumberS2(testNumToReverse[n]));   
+// };
+//#endregion
 //-> SOL3
 function reverseNumberS3 (someNumber) {
     let numberString = new String(someNumber);
-    // console.log(numberString);
     let reversedNumber = "";
 
     for (n = numberString.length-1; n>=0; n--) {
-        // console.log(n, numberString[n]);
-
         reversedNumber += numberString[n];
-        // console.log(numberString[n]);
     };
 
     return reversedNumber;
 };
 
-//testing
-testNumToReverse = [9876, 123456]
-
-for (let n = 0; n < testNumToReverse.length; n++) {
-    console.log(reverseNumberS3(testNumToReverse[n]));   
-};
+//testing Sol3
+// for (let n = 0; n < testNumToReverse.length; n++) {
+//     console.log(reverseNumberS3(testNumToReverse[n]));   
+// };
 
 // STRINGS EX. 2
 function order (someString) {
@@ -317,7 +320,7 @@ let testTriangles = [[2,3,4], [5,5,4], [4,5,5], [5,4,5], [3,3,3], [2,2,4]];
 // generating test arrays
 let testCharArray = ["Banana", "Kiwi", "Aubergine", "Pineapple"];
 
-//solutions to the task - first 2 buggy, last one works apart from A as a corner case. 
+//solutions to the task - first 2 buggy, last one works apart from capital A as a corner case. 
 function aTo1Replacement (someArray) {
 
     for (n=0; n<someArray.length; n++) {
