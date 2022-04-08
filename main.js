@@ -1,11 +1,13 @@
-//_________________________TABLE OF CONTENTS_________________________
+//___________________TABLE OF CONTENTS_______________
 //      Variables (Ex 1-5)
 //      Arrays (Ex. 1-7)
 //      Strings (Ex. 1-4)
 //      Extra Function Exercises (Ex. 1-10)
 //      DOM (Ex. 1-2)
 
-//_________________________VARIABLES_________________________
+//___________________VARIABLES_______________________
+//#region 
+
 // VARIABLES EX. 1
 // console.log("starting JS", "\nand it is working")
 
@@ -33,8 +35,10 @@
 // } else {
 //     console.log("You and Julia are the same age.");
 // };
+//#endregion
+//___________________ARRAYS__________________________
+//#region
 
-//_________________________ARRAYS_________________________
 // ARRAYS EX. 1
 let quokkas = ["Marta", "Jess", "Angelina", "Karolina", "Arno", "Alex", "John", "Ottavia", "Raul"];
 // quokkas.sort();
@@ -129,8 +133,9 @@ function turnToString (array) {
 }; 
 
 // console.log(turnToString(myColor));
-
-//_________________________STRINGS_________________________
+//#endregion
+//___________________STRINGS_________________________
+//#region
 // STRINGS EX. 1
 //-> SOL1
 function reverseNumberS1 (number) {
@@ -227,8 +232,9 @@ function findLongestWord (someString) {
 };
 
 // console.log(findLongestWord("This is a string that has some long words in it: capitalising, slicing, concatenating."));
-
-//_________________________EXTRA FUNCTION EXERCISES_________________________
+//#endregion
+//___________________EXTRA FUNCTION EXERCISES________
+//#region
 // EXTRA FUNCTION EX. 1
 function noReturnFunction () {
     console.log("The multiplication of 2 and 4 equals ", 2*4);
@@ -462,8 +468,9 @@ function oddBetween (a, b) {
 //testing - not working with negative numbers
 // let result = oddBetween(3,10);
 // console.log(result);
-
-//_________________________DOM_________________________
+//#endregion
+//___________________DOM_____________________________
+//#region
 // DOM EX. 1
 // Write a function that uses the JavaScript DOM to create list of items and add them to an unordered list in your html document.
 
@@ -513,3 +520,4 @@ function addTable(rows, cols) {
 };
 
 addTable(5,3);
+//#endregion
